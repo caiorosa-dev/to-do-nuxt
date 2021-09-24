@@ -25,7 +25,8 @@ export default {
 		// https://go.nuxtjs.dev/typescript
 		'@nuxt/typescript-build',
 		// https://go.nuxtjs.dev/tailwindcss
-		'@nuxtjs/tailwindcss'
+		'@nuxtjs/tailwindcss',
+		'@nuxtjs/color-mode'
 	],
 
 	tailwindcss: {
@@ -39,6 +40,22 @@ export default {
 		'@nuxtjs/axios',
 		'cookie-universal-nuxt'
 	],
+
+	colorMode: {
+		preference: 'system',
+		fallback: 'dark',
+		classSuffix: ''
+	},
+
+	loadingIndicator: {
+		name: 'wandering-cubes',
+		color: '#3B8070',
+		background: 'white'
+	},
+
+	loading: {
+		continuous: true
+	},
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {

@@ -13,5 +13,6 @@ type RootState = ReturnType<typeof state>;
 export const actions: ActionTree<RootState, RootState> = {
 	async nuxtServerInit({ dispatch }) {
 		await dispatch('modules/authentication/updateToken');
+		await dispatch('modules/theme/updateTheme');
 	}
 };
