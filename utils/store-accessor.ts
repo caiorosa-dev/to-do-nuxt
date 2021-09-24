@@ -1,12 +1,19 @@
+/* eslint-disable import/no-mutable-exports */
 import { Store } from 'vuex';
 import { getModule } from 'vuex-module-decorators';
+import Authentication from '~/store/modules/authentication';
 import Tasks from '~/store/modules/tasks';
+import User from '~/store/modules/user';
 
-// eslint-disable-next-line import/no-mutable-exports
-let tasksStore: Tasks;
+let authentication: Authentication;
+let tasks: Tasks;
+let users: User;
 
 function initializeStores(store: Store<any>): void {
-	tasksStore = getModule(Tasks, store);
+	authentication = getModule(Authentication, store);
+
+	tasks = getModule(Tasks, store);
+	users = getModule(User, store);
 }
 
-export { initializeStores, tasksStore };
+export { initializeStores, authentication, tasks, users };

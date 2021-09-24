@@ -1,3 +1,5 @@
+const axiosURL = process.env.NODE_ENV === 'production' ? 'https://todo-app.herokuapp.com' : 'http://localhost:3333';
+
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
@@ -10,7 +12,7 @@ export default {
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
-	css: [],
+	css: ['@/assets/global'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: ['@/plugins/accessor'],
@@ -26,6 +28,11 @@ export default {
 		'@nuxtjs/tailwindcss'
 	],
 
+	tailwindcss: {
+		// add '~tailwind.config` alias
+		exposeConfig: true
+	},
+
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		// https://go.nuxtjs.dev/axios
@@ -34,7 +41,9 @@ export default {
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
-	axios: {},
+	axios: {
+		baseURL: axiosURL
+	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {}

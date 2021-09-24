@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Open Sans';
+}
+
+.styled-input {
+	@apply text-gray-200 placeholder-gray-400 p-3 font-normal text-lg bg-gray-900 border-2
+	border-gray-800 outline-none transition-all rounded-lg w-96 focus:border-purple-400;
+}

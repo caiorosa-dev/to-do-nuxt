@@ -1,26 +1,26 @@
 <template>
 	<div class="container">
-		<div>
-			<Logo />
-			<h1 class="title">to-do</h1>
-			<div class="links">
-				<a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green"> Documentation </a>
-				<a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey"> GitHub </a>
-			</div>
-		</div>
+		<PageTitle>Hello World</PageTitle>
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" scoped>
 import Vue from 'vue';
 
-export default Vue.extend({});
+export default Vue.extend({
+	layout: 'navigation',
+	middleware: 'auth'
+});
 </script>
 
 <style>
 .container {
 	margin: 0 auto;
-	min-height: 100vh;
 	max-width: 85%;
+	height: 100%;
+
+	display: grid;
+	justify-content: center;
+	align-items: center;
 }
 </style>

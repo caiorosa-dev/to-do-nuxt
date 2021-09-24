@@ -1,4 +1,5 @@
 import { Module, VuexModule } from 'vuex-module-decorators';
+import Task from '~/types/Task';
 
 @Module({ name: 'modules/tasks', stateFactory: true, namespaced: true })
 export default class Tasks extends VuexModule {
@@ -9,13 +10,14 @@ export default class Tasks extends VuexModule {
 	/*
 		STATE
 	*/
-	tasks = 0;
+	tasks = [] as Task[];
+	single = {} as Task;
 
 	/*
 		MUTATIONS -> MUTATE STATE VARIABLES
 	*/
 
 	/*
-		ACTIONS -> CALL MUTATIONS OR SOME FUNCTIONS
+		ACTIONS -> CALL MUTATIONS OR SOME FUNCTIONS (API REQUESTS)
 	*/
 }
