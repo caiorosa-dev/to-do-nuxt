@@ -11,9 +11,33 @@
 
 			<input v-model="form.email" class="styled-input" type="email" placeholder="Email" />
 			<input v-model="form.password" class="styled-input" type="password" placeholder="Senha" />
-			<button class="w-96 p-4 rounded-lg hover:opacity-80 border-b-4 dark:border-black border-white border-opacity-50 transition-all font-semibold text-white bg-gradient-to-tl from-blue-500 to-purple-500" type="submit">Entrar</button>
+			<button
+				class="
+					w-96
+					p-4
+					rounded-lg
+					hover:opacity-80
+					border-b-4
+					dark:border-black
+					border-white border-opacity-50
+					transition-all
+					font-semibold
+					text-white
+					bg-gradient-to-tl
+					from-blue-500
+					to-purple-500
+				"
+				type="submit"
+			>
+				Entrar
+			</button>
 
-			<SmallText class="font-semibold text-center">Ainda não possui uma conta? <NuxtLink to="/register" class="dark:text-gray-400 dark:hover:text-gray-200 text-gray-700 hover:text-gray-900 transition-all">Registre-se.</NuxtLink> </SmallText>
+			<SmallText class="font-semibold text-center"
+				>Ainda não possui uma conta?
+				<NuxtLink to="/register" class="dark:text-gray-400 dark:hover:text-gray-200 text-gray-700 hover:text-gray-900 transition-all"
+					>Registre-se.</NuxtLink
+				>
+			</SmallText>
 		</form>
 	</section>
 </template>

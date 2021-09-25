@@ -1,5 +1,5 @@
 <template>
-	<div class="navigation">
+	<div class="navigation relative">
 		<Header />
 		<main class="dark:bg-gray-900 transition-colors">
 			<Nuxt />

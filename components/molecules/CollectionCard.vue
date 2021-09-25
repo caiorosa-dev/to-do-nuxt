@@ -1,5 +1,8 @@
 <template>
-	<div class="w-full dark:bg-gray-800 bg-gray-100 p-7 rounded-3xl transition-all group hover:ring-2 hover:cursor-pointer" :class="`hover:ring-${colorClass} ring-${colorClass}`">
+	<div
+		class="w-full dark:bg-gray-800 bg-gray-100 p-7 rounded-3xl transition-all group hover:ring-2 hover:cursor-pointer hover:-translate-y-3"
+		:class="`hover:ring-${colorClass} ring-${colorClass}`"
+	>
 		<div class="grid justify-start gap-6 grid-rows-2 grid-cols-1 items-end">
 			<div class="header">
 				<CollectionIcon :color-class="`bg-${colorClass}`" />

@@ -1,5 +1,5 @@
 <template>
-	<div class="root-container dark:bg-gray-900 transition-colors">
+	<div class="root-container relative dark:bg-gray-900 transition-colors">
 		<Nuxt />
 	</div>
 </template>

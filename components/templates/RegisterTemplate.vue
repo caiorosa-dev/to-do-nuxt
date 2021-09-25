@@ -6,15 +6,41 @@
 		</div>
 
 		<form class="grid gap-5 justify-center items-center" @submit.prevent="register">
-			<SmallText v-show="error" class="error font-semibold text-center text-red-500 transition-all">Ocorreu um erro interno, pedimos desculpas.</SmallText>
+			<SmallText v-show="error" class="error font-semibold text-center text-red-500 transition-all"
+				>Ocorreu um erro interno, pedimos desculpas.</SmallText
+			>
 			<SmallText v-show="success" class="error font-semibold text-center text-purple-500 transition-all">Sucesso! Redirecionando...</SmallText>
 
 			<input v-model="form.name" class="styled-input" type="text" placeholder="Nome" />
 			<input v-model="form.email" class="styled-input" type="email" placeholder="Email" />
 			<input v-model="form.password" class="styled-input" type="password" placeholder="Senha" />
-			<button class="w-96 p-4 rounded-lg hover:opacity-80 border-b-4 dark:border-black border-white border-opacity-50 transition-all font-semibold text-white bg-gradient-to-tl from-blue-500 to-purple-500" type="submit">Registrar-Se</button>
+			<button
+				class="
+					w-96
+					p-4
+					rounded-lg
+					hover:opacity-80
+					border-b-4
+					dark:border-black
+					border-white border-opacity-50
+					transition-all
+					font-semibold
+					text-white
+					bg-gradient-to-tl
+					from-blue-500
+					to-purple-500
+				"
+				type="submit"
+			>
+				Registrar-Se
+			</button>
 
-			<SmallText class="font-semibold text-center">Já possui uma conta? <NuxtLink to="/login" class="dark:text-gray-400 dark:hover:text-gray-200 text-gray-700 hover:text-gray-900 transition-all">Entre agora.</NuxtLink> </SmallText>
+			<SmallText class="font-semibold text-center"
+				>Já possui uma conta?
+				<NuxtLink to="/login" class="dark:text-gray-400 dark:hover:text-gray-200 text-gray-700 hover:text-gray-900 transition-all"
+					>Entre agora.</NuxtLink
+				>
+			</SmallText>
 		</form>
 	</section>
 </template>

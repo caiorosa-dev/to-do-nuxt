@@ -4,6 +4,6 @@
 	"tabWidth": 4,
 	"trailingComma": "none",
 	"arrowParens": "always",
-	"printWidth": 300,
+	"printWidth": 150,
 	"singleQuote": true
 }
