@@ -1,9 +1,9 @@
-const axiosURL = process.env.NODE_ENV === 'production' ? 'https://todo-app.herokuapp.com' : 'http://localhost:3333';
+const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-adonis.herokuapp.com' : 'http://localhost:3333';
 
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'to-do',
+		title: 'Too do',
 		htmlAttrs: {
 			lang: 'en'
 		},
@@ -15,7 +15,7 @@ export default {
 	css: ['@/assets/global'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: ['@/plugins/accessor'],
+	plugins: ['@/plugins/accessor', '@/plugins/axios'],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: [{ path: '@/components', pathPrefix: false }],
@@ -51,10 +51,6 @@ export default {
 		name: 'wandering-cubes',
 		color: '#3B8070',
 		background: 'white'
-	},
-
-	loading: {
-		continuous: true
 	},
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios

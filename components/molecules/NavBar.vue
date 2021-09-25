@@ -26,6 +26,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { authentication } from '~/store';
+
 export default Vue.extend({
 	methods: {
 		async logout() {

@@ -10,7 +10,7 @@
 
 .styled-input {
 	@apply dark:text-gray-200 text-gray-600 placeholder-gray-400 p-3 font-normal text-lg dark:bg-gray-900 border-2
-	dark:border-gray-800 outline-none transition-all rounded-lg w-96 focus:border-purple-400;
+	dark:border-gray-800 outline-none transition-all rounded-lg w-96 dark:focus:border-purple-400 focus:border-purple-400;
 }
 
 .icon-group {
