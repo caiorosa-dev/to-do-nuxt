@@ -1,5 +1,6 @@
+/* eslint-disable camelcase */
 export default interface Collection {
-	id?: number;
+	id: number;
 	name: string;
-	color: string;
+	color_id: number;
 }

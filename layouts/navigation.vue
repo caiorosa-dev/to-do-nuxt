@@ -1,11 +1,10 @@
 <template>
-	<div class="navigation">
-		<div class="navbar">
-			
-		</div>
-		<main class="bg-gray-900">
+	<div class="navigation relative">
+		<Header />
+		<main class="dark:bg-gray-900 transition-colors">
 			<Nuxt />
 		</main>
+		<ErrorModal />
 	</div>
 </template>
 
@@ -21,10 +20,5 @@ export default Vue.extend({});
 	grid-template-rows: auto 1fr;
 	width: 100vw;
 	height: 100vh;
-
-	.navbar {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
 }
 </style>

@@ -49,11 +49,13 @@ export default class Authentication extends VuexModule {
 
 	@Action
 	public async destroy() {
-		await $axios.$delete('/auth', {
-			headers: {
-				Authorization: this.token
-			}
-		});
+		try {
+			await $axios.$delete('/auth', {
+				headers: {
+					Authorization: this.token
+				}
+			});
+		} catch {}
 
 		$cookies.remove('token');
 		this.context.commit('SET_TOKEN', '');

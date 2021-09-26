@@ -1,13 +1,17 @@
-const axiosURL = process.env.NODE_ENV === 'production' ? 'https://todo-app.herokuapp.com' : 'http://localhost:3333';
+const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-adonis.herokuapp.com' : 'http://localhost:3333';
 
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'to-do',
+		title: 'Too do',
 		htmlAttrs: {
 			lang: 'en'
 		},
-		meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '' }],
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+			{ hid: 'description', name: 'description', content: '' }
+		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
 	},
 
@@ -15,7 +19,7 @@ export default {
 	css: ['@/assets/global'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: ['@/plugins/accessor'],
+	plugins: ['@/plugins/accessor', '@/plugins/axios'],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: [{ path: '@/components', pathPrefix: false }],
@@ -25,7 +29,8 @@ export default {
 		// https://go.nuxtjs.dev/typescript
 		'@nuxt/typescript-build',
 		// https://go.nuxtjs.dev/tailwindcss
-		'@nuxtjs/tailwindcss'
+		'@nuxtjs/tailwindcss',
+		'@nuxtjs/color-mode'
 	],
 
 	tailwindcss: {
@@ -39,6 +44,18 @@ export default {
 		'@nuxtjs/axios',
 		'cookie-universal-nuxt'
 	],
+
+	colorMode: {
+		preference: 'system',
+		fallback: 'dark',
+		classSuffix: ''
+	},
+
+	loadingIndicator: {
+		name: 'wandering-cubes',
+		color: '#3B8070',
+		background: 'white'
+	},
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {

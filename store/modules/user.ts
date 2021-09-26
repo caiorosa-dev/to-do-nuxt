@@ -1,7 +1,7 @@
 import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators';
 import { RegisterPayload } from '~/types/Payload';
 import { $axios } from '~/utils/nuxt-instance';
-import { authentication } from '~/store';
+import { authentication, loading } from '~/store';
 
 @Module({ name: 'modules/user', stateFactory: true, namespaced: true })
 export default class User extends VuexModule {
@@ -38,9 +38,16 @@ export default class User extends VuexModule {
 
 	@Action
 	public async create({ name, email, password }: RegisterPayload) {
-		const data = await $axios.$post('/user', { name, email, password });
+		try {
+			const data = await $axios.$post('/user', { name, email, password });
 
-		this.update(data);
-		authentication.create({ email, password });
+			this.update(data);
+			authentication.create({ email, password });
+		} catch (error: any) {
+			loading.updateError({
+				occurred: true,
+				message: error
+			});
+		}
 	}
 }
