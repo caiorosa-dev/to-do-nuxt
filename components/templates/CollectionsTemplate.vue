@@ -4,7 +4,7 @@
 
 		<CollectionsList class="mt-16" @open-modal="toggleModal" />
 
-		<CreateCollectionModal :show="showModal" />
+		<CreateCollectionModal :show="showModal" @click="toggleModal" />
 	</div>
 </template>
 
