@@ -14,6 +14,5 @@ export const actions: ActionTree<RootState, RootState> = {
 	async nuxtServerInit({ dispatch }) {
 		await dispatch('modules/authentication/updateToken');
 		await dispatch('modules/theme/updateTheme');
-		await dispatch('modules/colors/fetch');
 	}
 };

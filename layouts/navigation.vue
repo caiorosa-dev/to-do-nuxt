@@ -4,6 +4,7 @@
 		<main class="dark:bg-gray-900 transition-colors">
 			<Nuxt />
 		</main>
+		<ErrorModal />
 	</div>
 </template>
 

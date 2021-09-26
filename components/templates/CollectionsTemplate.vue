@@ -2,7 +2,7 @@
 	<div class="collections-template grid pt-8">
 		<PageTitle class="justify-self-start">Coleções</PageTitle>
 
-		<CollectionsList class="mt-16" @open-model="toggleModal" />
+		<CollectionsList class="mt-16" @open-modal="toggleModal" />
 
 		<CreateCollectionModal :show="showModal" />
 	</div>
@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 export default Vue.extend({
 	data() {
 		return {

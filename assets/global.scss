@@ -16,3 +16,28 @@
 .icon-group {
 	@apply flex gap-6 p-3 items-center;
 }
+
+.stroke-indigo-500 {
+	stroke: #6366F1;
+}
+
+.stroke-green-500 {
+	stroke: #10B981;
+}
+
+.nuxt-progress {
+	background-color: #818CF8;
+	height: 3px;
+}
+
+/*
+	TRANSITION
+*/
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s ease-in-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity: 0;
+}

@@ -1,7 +1,9 @@
 <template>
-	<ModalContainer class="transition-all" :class="[{ hidden: !show }]">
-		<h1>Criar tlg</h1>
-	</ModalContainer>
+	<transition name="fade">
+		<ModalContainer v-if="show" class="transition-all">
+			<div class="dark:bg-gray-800 bg-gray-100 p-4 rounded-2xl"></div>
+		</ModalContainer>
+	</transition>
 </template>
 
 <script lang="ts">

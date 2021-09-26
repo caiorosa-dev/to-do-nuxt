@@ -35,7 +35,9 @@ export default class Colors extends VuexModule {
 
 	@Action
 	public async fetch() {
-		const colors = await $axios.$get('/color');
+		let colors = await $axios.$get('/color');
+
+		if (colors === undefined) colors = [];
 
 		this.context.commit('SET_COLORS', colors);
 	}

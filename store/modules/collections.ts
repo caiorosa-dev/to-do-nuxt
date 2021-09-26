@@ -35,7 +35,9 @@ export default class Collections extends VuexModule {
 
 	@Action
 	public async fetch() {
-		const collections = await $axios.$get('/collection');
+		let collections = await $axios.$get('/collection');
+
+		if (collections === undefined) collections = [];
 
 		this.context.commit('SET_COLLECTIONS', collections);
 	}

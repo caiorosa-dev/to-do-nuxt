@@ -1,5 +1,6 @@
 export default interface Task {
 	content: string;
-	collection: number;
-	check: boolean;
+	// eslint-disable-next-line camelcase
+	collection_id: number;
+	check: number;
 }
