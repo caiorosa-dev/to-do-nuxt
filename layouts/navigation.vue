@@ -1,7 +1,7 @@
 <template>
 	<div class="navigation relative">
 		<Header />
-		<main class="dark:bg-gray-900 transition-colors">
+		<main class="dark:bg-gray-900 transition-colors main-content">
 			<Nuxt />
 		</main>
 		<ErrorModal />
@@ -20,5 +20,9 @@ export default Vue.extend({});
 	grid-template-rows: auto 1fr;
 	width: 100vw;
 	height: 100vh;
+}
+
+.main-content {
+	overflow-x: hidden;
 }
 </style>
