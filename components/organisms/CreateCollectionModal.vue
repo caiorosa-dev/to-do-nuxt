@@ -33,10 +33,37 @@
 				<footer class="w-full grid justify-end gap-2 items-center grid-flow-col grid-cols-2 mt-6">
 					<div></div>
 					<div class="grid justify-end gap-2 items-center grid-flow-col grid-cols-2">
-						<button class="bg-gray-600 hover:bg-gray-500 p-2 text-white font-semibold rounded-lg transition-all" @click="saveCollection">
+						<button
+							class="
+								dark:bg-gray-600 dark:hover:bg-gray-500
+								bg-gray-200
+								hover:bg-gray-300
+								p-2
+								dark:text-white
+								text-gray-600
+								font-semibold
+								rounded-lg
+								transition-all
+							"
+							@click="saveCollection"
+						>
 							Salvar
 						</button>
-						<button class="hover:bg-gray-600 p-2 text-gray-200 font-semibold rounded-lg transition-all" @click="emitClick">Sair</button>
+						<button
+							class="
+								dark:hover:bg-gray-600
+								hover:bg-gray-200
+								p-2
+								dark:text-gray-200
+								text-gray-600
+								font-semibold
+								rounded-lg
+								transition-all
+							"
+							@click="emitClick"
+						>
+							Sair
+						</button>
 					</div>
 				</footer>
 			</div>
@@ -88,12 +115,12 @@ export default Vue.extend({
 			this.form.color = e;
 		},
 		async saveCollection() {
+			this.emitClick();
 			try {
 				loading.update(true);
 
 				await this.$axios.$post('/collection', this.form);
 				await collections.fetch();
-				this.emitClick();
 
 				loading.update(false);
 			} catch (error) {
