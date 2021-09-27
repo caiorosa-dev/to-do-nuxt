@@ -1,5 +1,5 @@
 export default interface Color {
-	id?: number;
+	id: number;
 	name: string;
 	display: string;
 }

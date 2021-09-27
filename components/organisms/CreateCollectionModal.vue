@@ -1,8 +1,8 @@
 <template>
 	<transition name="fade">
 		<ModalContainer v-if="showModal" class="transition-all">
-			<div class="dark:bg-gray-800 bg-gray-100 p-4 rounded-2xl w-1/2">
-				<header class="flex justify-between items-center">
+			<div class="dark:bg-gray-800 bg-gray-100 p-4 rounded-2xl w-1/3 grid grid-flow-row gap-4 justify-center">
+				<header class="flex justify-between items-center mb-6">
 					<TitleText text="Nova Coleção" />
 					<SmallButton
 						path="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -10,6 +10,25 @@
 						@click="emitClick"
 					/>
 				</header>
+
+				<section class="grid grid-flow-row gap-1 justify-center">
+					<label class="dark:text-gray-200 text-gray-600">Nome</label>
+					<input v-model="form.name" type="text" class="w-full styled-input" />
+				</section>
+
+				<section>
+					<label class="dark:text-gray-200 text-gray-600 w-full">Cor</label>
+					<div class="grid grid-cols-5 items-center justify-items-center gap-2">
+						<ColorInput
+							v-for="color in colors"
+							:key="color.id"
+							:color="color.display"
+							:checked="checkedInput(color.id)"
+							:value="color.id"
+							@check="updateColor"
+						/>
+					</div>
+				</section>
 			</div>
 		</ModalContainer>
 	</transition>
@@ -17,6 +36,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { colors } from '~/store';
 
 export default Vue.extend({
 	props: {
@@ -34,6 +54,11 @@ export default Vue.extend({
 			showModal: false
 		};
 	},
+	computed: {
+		colors() {
+			return colors.$colors;
+		}
+	},
 	watch: {
 		show() {
 			this.showModal = this.show;
@@ -45,6 +70,12 @@ export default Vue.extend({
 	methods: {
 		emitClick() {
 			this.$emit('click');
+		},
+		checkedInput(id: number) {
+			return this.form.color === id;
+		},
+		updateColor(e: number) {
+			this.form.color = e;
 		}
 	}
 });
