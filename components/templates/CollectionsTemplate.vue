@@ -28,5 +28,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .collections-template {
 	grid-template-rows: auto 1fr;
+	overflow-y: none;
 }
 </style>
