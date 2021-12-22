@@ -4,7 +4,7 @@
 
 		<CollectionsList class="mt-16" @open-modal="toggleModal" />
 
-		<CreateCollectionModal :show="showModal" />
+		<CreateCollectionModal :show="showModal" @click="toggleModal" />
 	</div>
 </template>
 
@@ -28,5 +28,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .collections-template {
 	grid-template-rows: auto 1fr;
+	overflow-y: none;
 }
 </style>
