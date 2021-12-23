@@ -12,9 +12,14 @@ export default class Collections extends VuexModule {
 		STATE
 	*/
 	collections = [] as Collection[];
+	selected = {} as Collection;
 
 	get $collections() {
 		return this.collections;
+	}
+
+	get $selected() {
+		return this.selected;
 	}
 
 	/*
@@ -25,12 +30,30 @@ export default class Collections extends VuexModule {
 		this.collections = data;
 	}
 
+	@Mutation
+	public SET_SELECTED(data: Collection) {
+		this.selected = data;
+	}
+
 	/*
 		ACTIONS -> CALL MUTATIONS OR SOME FUNCTIONS
 	*/
 	@Action
 	public update(collections: Collection[]) {
 		this.context.commit('SET_COLLECTIONS', collections);
+	}
+
+	@Action
+	public async create(data: Collection) {
+		await $axios.$post('/collection', data);
+		await this.fetch();
+	}
+
+	@Action
+	public select(id: number) {
+		const collection = this.collections.find((obj) => obj.id === id);
+
+		this.context.commit('SET_SELECTED', collection);
 	}
 
 	@Action

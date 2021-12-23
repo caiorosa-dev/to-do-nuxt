@@ -18,7 +18,9 @@ module.exports = {
 			// Vermelho
 			'ring-red-500',
 			'bg-red-500',
+			'bg-red-400',
 			'border-red-500',
+			'stroke-red-500',
 			// Yellow
 			'ring-yellow-400',
 			'bg-yellow-400',
@@ -27,13 +29,21 @@ module.exports = {
 			'ring-pink-500',
 			'bg-pink-500',
 			'border-pink-500',
-			// Gray
-			'bg-gray-500'
+			// Background
+			'bg-green-400',
+			'bg-gray-500',
+			'bg-gray-600',
+			'bg-gray-700',
+			'bg-gray-800',
+			'bg-gray-900'
 		]
 	},
 	theme: {
 		fontFamily: {
 			sans: ['Open Sans']
 		}
+	},
+	variants: {
+		borderColor: ['focus-within']
 	}
 };

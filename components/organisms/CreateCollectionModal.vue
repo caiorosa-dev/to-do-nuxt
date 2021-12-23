@@ -1,7 +1,7 @@
 <template>
 	<transition name="fade">
 		<ModalContainer v-if="showModal" class="transition-all">
-			<div class="dark:bg-gray-800 bg-gray-100 p-4 rounded-2xl w-1/3 grid grid-flow-row gap-4 justify-center">
+			<div class="dark:bg-gray-800 bg-gray-100 p-4 rounded-2xl w-1/3 min-w-min grid grid-flow-row gap-4 justify-center">
 				<header class="flex justify-between items-center mb-6">
 					<TitleText text="Nova Coleção" />
 					<SmallButton
@@ -13,7 +13,7 @@
 
 				<section class="grid grid-flow-row gap-1 justify-center">
 					<label class="dark:text-gray-200 text-gray-600">Nome</label>
-					<input v-model="form.name" type="text" class="w-full styled-input" />
+					<input v-model="form.name" type="text" class="w-96 styled-input" />
 				</section>
 
 				<section>
@@ -50,16 +50,7 @@
 							Salvar
 						</button>
 						<button
-							class="
-								dark:hover:bg-gray-600
-								hover:bg-gray-200
-								p-2
-								dark:text-gray-200
-								text-gray-600
-								font-semibold
-								rounded-lg
-								transition-all
-							"
+							class="dark:hover:bg-gray-600 hover:bg-gray-200 p-2 dark:text-gray-200 text-gray-600 font-semibold rounded-lg transition-all"
 							@click="emitClick"
 						>
 							Sair
@@ -119,8 +110,7 @@ export default Vue.extend({
 			try {
 				loading.update(true);
 
-				await this.$axios.$post('/collection', this.form);
-				await collections.fetch();
+				await collections.create(this.form);
 
 				loading.update(false);
 			} catch (error) {

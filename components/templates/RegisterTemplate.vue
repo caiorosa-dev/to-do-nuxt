@@ -11,9 +11,9 @@
 			>
 			<SmallText v-show="success" class="error font-semibold text-center text-purple-500 transition-all">Sucesso! Redirecionando...</SmallText>
 
-			<input v-model="form.name" class="styled-input" type="text" placeholder="Nome" />
-			<input v-model="form.email" class="styled-input" type="email" placeholder="Email" />
-			<input v-model="form.password" class="styled-input" type="password" placeholder="Senha" />
+			<input v-model="form.name" class="styled-input w-96" type="text" placeholder="Nome" />
+			<input v-model="form.email" class="styled-input w-96" type="email" placeholder="Email" />
+			<input v-model="form.password" class="styled-input w-96" type="password" placeholder="Senha" />
 			<button
 				class="
 					w-96

@@ -1,5 +1,5 @@
 <template>
-	<h4 class="dark:text-gray-200 text-gray-600 text-base font-semibold transition-colors">{{ text }}</h4>
+	<h4 class="dark:text-gray-200 text-gray-600 text-xl font-semibold transition-colors">{{ text }}</h4>
 </template>
 
 <script lang="ts">

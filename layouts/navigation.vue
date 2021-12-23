@@ -2,7 +2,9 @@
 	<div class="navigation relative">
 		<Header />
 		<main class="dark:bg-gray-900 transition-colors main-content">
-			<Nuxt />
+			<div class="container">
+				<Nuxt />
+			</div>
 		</main>
 		<ErrorModal />
 	</div>
