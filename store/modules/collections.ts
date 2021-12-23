@@ -50,6 +50,20 @@ export default class Collections extends VuexModule {
 	}
 
 	@Action
+	public async apiUpdate(data: Collection) {
+		await $axios.$put(`/collection/${data.id}`, data);
+		await this.fetch();
+
+		this.select(data.id as number);
+	}
+
+	@Action
+	public async delete(data: Collection) {
+		await $axios.$delete(`/collection/${data.id}`);
+		await this.fetch();
+	}
+
+	@Action
 	public select(id: number) {
 		const collection = this.collections.find((obj) => obj.id === id);
 
