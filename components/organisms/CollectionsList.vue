@@ -1,7 +1,7 @@
 <template>
 	<section class="collections-list grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 justify-items-center gap-8">
 		<CollectionCard v-for="obj in allCollections" :key="obj.id" :value="obj" :taskslist="getTasks(obj.id)" />
-		<SkelletonCard v-for="index in amount" :key="index" />
+		<SkeletonCard v-for="index in amount" :key="index" />
 
 		<CreateCollectionButton v-if="!isLoading" @click="openModal" />
 	</section>
