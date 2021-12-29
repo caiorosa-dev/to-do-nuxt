@@ -1,7 +1,5 @@
 <template>
-	<div class="container">
-		<CollectionsTemplate />
-	</div>
+	<CollectionsTemplate />
 </template>
 
 <script lang="ts" scoped>
@@ -27,14 +25,4 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-.container {
-	margin: 0 auto;
-	max-width: 70%;
-	height: 100%;
-
-	@media screen and (min-width: 1600px) {
-		max-width: 47.5%;
-	}
-}
-</style>
+<style></style>

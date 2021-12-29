@@ -1,11 +1,11 @@
 <template>
 	<NuxtLink
-		class="w-full dark:bg-gray-800 bg-gray-100 p-7 rounded-3xl transition-all group hover:ring-2 hover:cursor-pointer hover:-translate-y-3"
+		class="w-full h-full dark:bg-gray-800 bg-gray-100 p-5 pl-7 pr-7 rounded-3xl transition-all group hover:ring-2 hover:cursor-pointer hover:-translate-y-3"
 		:class="`hover:ring-${colorClass} ring-${colorClass}`"
 		:to="`/collection/${collection.id}`"
 		@click="emitClick"
 	>
-		<div class="grid justify-start gap-6 grid-rows-2 grid-cols-1 items-end">
+		<div class="grid justify-start gap-5 grid-rows-2 grid-cols-1 items-center">
 			<div class="header">
 				<CollectionIcon :color-class="`bg-${colorClass}`" />
 			</div>

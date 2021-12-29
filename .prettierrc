@@ -5,6 +5,6 @@
 	"trailingComma": "none",
 	"arrowParens": "always",
 	"endOfLine": "crlf",
-	"printWidth": 150,
+	"printWidth": 160,
 	"singleQuote": true
 }

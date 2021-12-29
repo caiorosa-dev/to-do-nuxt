@@ -2,7 +2,7 @@ import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators';
 
 interface ErrorObject {
 	occurred: boolean;
-	message: string;
+	message: string | unknown;
 }
 
 type Error = ErrorObject | undefined;

@@ -3,7 +3,7 @@
 		<ModalContainer v-if="showModal" class="transition-all">
 			<div class="dark:bg-gray-800 bg-gray-100 p-4 rounded-2xl w-1/3 min-w-min grid grid-flow-row gap-4 justify-center">
 				<header class="flex justify-between items-center mb-6">
-					<TitleText text="Nova Coleção" />
+					<TitleText text="Editar Coleção" />
 					<SmallButton
 						path="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
 						color="gray-500"
@@ -31,7 +31,9 @@
 				</section>
 
 				<footer class="w-full grid justify-end gap-2 items-center grid-flow-col grid-cols-2 mt-6">
-					<div></div>
+					<div class="grid justify-end gap-2 items-center grid-flow-col grid-cols-2">
+						<button class="bg-red-500 hover:bg-red-400 p-2 text-white font-semibold rounded-lg transition-all" @click="deleteItem">Deletar</button>
+					</div>
 					<div class="grid justify-end gap-2 items-center grid-flow-col grid-cols-2">
 						<button
 							class="
@@ -45,7 +47,7 @@
 								rounded-lg
 								transition-all
 							"
-							@click="saveCollection"
+							@click="updateCollection"
 						>
 							Salvar
 						</button>
@@ -65,6 +67,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { collections, colors, loading } from '~/store';
+import Collection from '~/types/Collection';
 
 export default Vue.extend({
 	props: {
@@ -75,10 +78,7 @@ export default Vue.extend({
 	},
 	data() {
 		return {
-			form: {
-				color: 1,
-				name: ''
-			},
+			form: {} as Collection,
 			showModal: false
 		};
 	},
@@ -94,23 +94,30 @@ export default Vue.extend({
 	},
 	created() {
 		this.showModal = this.show;
+
+		this.form = Object.assign({}, collections.$selected);
 	},
 	methods: {
 		emitClick() {
 			this.$emit('click');
 		},
 		checkedInput(id: number) {
-			return this.form.color === id;
+			return this.form.color_id === id;
 		},
 		updateColor(e: number) {
-			this.form.color = e;
+			this.form.color_id = e;
 		},
-		async saveCollection() {
+		async deleteItem() {
+			await collections.delete(this.form);
+
+			this.$router.push('/');
+		},
+		async updateCollection() {
 			this.emitClick();
 			try {
 				loading.update(true);
 
-				await collections.create(this.form);
+				await collections.apiUpdate(this.form);
 
 				loading.update(false);
 			} catch (error) {

@@ -6,11 +6,11 @@
 		</div>
 
 		<form class="grid gap-5 justify-center items-center" @submit.prevent="login">
-			<SmallText v-show="error" class="error font-semibold text-center text-red-500 transition-all">Credenciais inválidas.</SmallText>
-			<SmallText v-show="success" class="error font-semibold text-center text-purple-500 transition-all">Sucesso! Redirecionando...</SmallText>
+			<SmallText v-show="error" class="notification font-semibold text-center text-red-500 transition-all">Credenciais inválidas.</SmallText>
+			<SmallText v-show="success" class="notification font-semibold text-center text-purple-500 transition-all">Sucesso! Redirecionando...</SmallText>
 
-			<input v-model="form.email" class="styled-input" type="email" placeholder="Email" />
-			<input v-model="form.password" class="styled-input" type="password" placeholder="Senha" />
+			<input v-model="form.email" class="styled-input w-96" type="email" placeholder="Email" />
+			<input v-model="form.password" class="styled-input w-96" type="password" placeholder="Senha" />
 			<button
 				class="
 					w-96
@@ -86,12 +86,12 @@ export default Vue.extend({
 	grid-template-rows: 1fr 4fr;
 }
 
-.error {
+.notification {
 	opacity: 1;
-	animation: anima 0.5s ease-in-out;
+	animation: animation 0.75s ease-in-out;
 }
 
-@keyframes anima {
+@keyframes animation {
 	0% {
 		transform: translateY(-20px);
 		opacity: 0;

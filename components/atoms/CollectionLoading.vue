@@ -1,10 +1,6 @@
 <template>
 	<div class="w-8 h-8 flex justify-center items-center">
-		<div
-			v-if="completed"
-			class="flex justify-center items-center w-6 h-6 rounded-full ring-2 ring-opacity-30"
-			:class="`bg-${color} ring-${color}`"
-		>
+		<div v-if="completed" class="flex justify-center items-center w-6 h-6 rounded-full ring-2 ring-opacity-30" :class="`bg-${color} ring-${color}`">
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
 				<path
 					fill-rule="evenodd"
@@ -36,10 +32,10 @@ export default Vue.extend({
 	},
 	computed: {
 		offset(): number {
-			return 150 - (75 * this.current) / 100;
+			return this.current > 0 ? 150 - (75 * this.current) / 100 : 150;
 		},
 		completed(): boolean {
-			return this.current >= 100 || isNaN(this.current);
+			return this.current >= 100;
 		}
 	}
 });

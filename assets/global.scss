@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
 
 *,
 *::before,
@@ -10,7 +10,12 @@
 
 .styled-input {
 	@apply dark:text-gray-200 text-gray-600 placeholder-gray-400 p-3 font-normal text-lg dark:bg-gray-900 border-2
-	dark:border-gray-800 dark:hover:border-gray-600 hover:border-gray-400 outline-none transition-all rounded-lg w-96 dark:focus:border-purple-400 focus:border-purple-400;
+	dark:border-gray-800 dark:hover:border-gray-600 hover:border-gray-400 outline-none transition-all rounded-lg dark:focus:border-purple-400 focus:border-purple-400;
+}
+
+.styled-form {
+	@apply dark:text-gray-200 text-gray-600 placeholder-gray-400 font-normal text-lg dark:bg-gray-900 border-2
+	dark:border-gray-800 dark:hover:border-gray-600 hover:border-gray-400 outline-none transition-all rounded-lg focus-within:border-purple-400;
 }
 
 .icon-group {
@@ -18,15 +23,31 @@
 }
 
 .stroke-indigo-500 {
-	stroke: #6366F1;
+	stroke: #6366f1;
 }
 
 .stroke-green-500 {
-	stroke: #10B981;
+	stroke: #10b981;
+}
+
+.stroke-red-500 {
+	stroke: #ef4444;
+}
+
+.stroke-pink-500 {
+	stroke: #ec4899;
+}
+
+.stroke-blue-500 {
+	stroke: #3b82f6;
+}
+
+.stroke-yellow-400 {
+	stroke: #fbbf24;
 }
 
 .nuxt-progress {
-	background-color: #818CF8;
+	background-color: #818cf8;
 	height: 3px;
 }
 
@@ -40,4 +61,14 @@
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
 	opacity: 0;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 70%;
+	height: 100%;
+
+	@media screen and (min-width: 1600px) {
+		max-width: 47.5%;
+	}
 }
