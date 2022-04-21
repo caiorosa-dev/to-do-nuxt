@@ -54,10 +54,9 @@ export default {
 		classSuffix: ''
 	},
 
-	loadingIndicator: {
-		name: 'wandering-cubes',
-		color: '#3B8070',
-		background: 'white'
+	loading: {
+		color: '#6366f1',
+		height: '4px'
 	},
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
