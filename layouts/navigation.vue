@@ -17,6 +17,11 @@ export default Vue.extend({});
 </script>
 
 <style lang="scss" scoped>
+.nuxt-progress {
+	background-color: #818cf8;
+	height: 3px;
+}
+
 .navigation {
 	display: grid;
 	grid-template-rows: auto 1fr;
