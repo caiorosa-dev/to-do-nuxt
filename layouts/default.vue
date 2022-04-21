@@ -5,6 +5,11 @@
 </template>
 
 <style lang="scss" scoped>
+.nuxt-progress {
+	background-color: #818cf8;
+	height: 3px;
+}
+
 .root-container {
 	height: 100vh;
 	width: 100vw;
