@@ -1,4 +1,4 @@
-const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-adonis.herokuapp.com' : 'http://localhost:3333';
+const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-app-lp0w.onrender.com' : 'http://localhost:3333';
 
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head

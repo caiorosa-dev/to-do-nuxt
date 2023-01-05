@@ -4,7 +4,7 @@
 	"tabWidth": 4,
 	"trailingComma": "none",
 	"arrowParens": "always",
-	"endOfLine": "crlf",
+	"endOfLine": "lf",
 	"printWidth": 160,
 	"singleQuote": true
 }
