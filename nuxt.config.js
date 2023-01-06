@@ -2,6 +2,7 @@ const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-app-lp0w
 
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
+	target: 'static',
 	head: {
 		title: 'Too do',
 		htmlAttrs: {
@@ -62,7 +63,7 @@ export default {
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		baseURL: axiosURL
+		baseURL: 'https://to-do-app-lp0w.onrender.com'
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
