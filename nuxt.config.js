@@ -1,8 +1,7 @@
-const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-app-lp0w.onrender.com' : 'http://localhost:3333';
+// const axiosURL = process.env.NODE_ENV === 'production' ? 'https://to-do-app-lp0w.onrender.com' : 'http://localhost:3333';
 
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
-	target: 'static',
 	head: {
 		title: 'Too do',
 		htmlAttrs: {
@@ -55,15 +54,9 @@ export default {
 		classSuffix: ''
 	},
 
-	loadingIndicator: {
-		name: 'wandering-cubes',
-		color: '#3B8070',
-		background: 'white'
-	},
-
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		baseURL: 'https://to-do-app-lp0w.onrender.com'
+		baseURL: 'https://todo-api.caiorosadev.com'
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
